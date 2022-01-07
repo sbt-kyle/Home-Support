@@ -431,3 +431,38 @@ section .services-btn-container {
     font-size: 12px;
   }
 }
+
+@media (max-width: 370px) {
+  .acc-container {
+    width: 330px;
+    height: 170px;
+  }
+
+  .welcome-msg {
+    width: 270px;
+    left: 30px;
+  }
+
+  .welcome-msg h2 {
+    font-size: 20px;
+  }
+
+  .welcome-msg p {
+    font-size: 12px;
+  }
+
+  .acc-btn {
+    margin-top: 50px;
+    width: 300px;
+  }
+
+  .sign-up {
+    width: 60px;
+    font-size: 11px;
+  }
+
+  .log-in {
+    width: 60px;
+    font-size: 11px;
+  }
+}
