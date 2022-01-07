@@ -68,6 +68,22 @@ li a:hover {
   border-bottom: solid black 2px;
 }
 
+li a:active {
+  padding-bottom: 2px;
+  border-bottom: solid #6c6cf8 2px;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 5px;
+}
+
 /* SECTION IMAGE */
 
 section {
@@ -238,9 +254,69 @@ section .services-btn-container {
   padding-bottom: 10px;
 } */
 
-@media screen and (max-width: 800px) {
+@media (min-width: 1200px) {
+  header .logo {
+    width: 200px;
+  }
+
+  header .logo img {
+    width: 35px;
+    height: 35px;
+  }
+
+  header .logo h1 {
+    font-size: 20px;
+  }
+
+  .acc-container {
+    width: 600px;
+    height: 230px;
+  }
+
+  .welcome-msg {
+    width: 500px;
+    top: 0;
+    left: 50px;
+    margin: auto;
+  }
+
+  .welcome-msg h2 {
+    font-size: 30px;
+  }
+
+  .welcome-msg p {
+    color: #413f3f;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .acc-btn {
+    margin-top: 70px;
+    width: 400px;
+    height: 70px;
+  }
+
+  .sign-up {
+    width: 100px;
+    font-size: 16px;
+  }
+
+  .log-in {
+    width: 100px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
   nav {
     display: none;
+  }
+
+  .burger {
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    cursor: pointer;
   }
 
   header .logo {
@@ -248,31 +324,86 @@ section .services-btn-container {
   }
 }
 
-@media screen and (max-width: 640px) {
-  section .services-btn-container {
-    width: 32%;
-    height: 40px;
-    left: 35%;
+@media (max-width: 767px) {
+  nav {
+    display: none;
   }
-}
 
-@media screen and (max-width: 620px) {
-  section .services-btn-container a {
+  .burger {
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  header .logo {
+    margin: auto;
+  }
+
+  .acc-container {
+    width: 450px;
+    height: 190px;
+  }
+
+  .welcome-msg {
+    width: 350px;
+    top: 0;
+    left: 50px;
+  }
+
+  .welcome-msg h2 {
+    font-size: 24px;
+  }
+
+  .welcome-msg p {
+    color: #413f3f;
+    font-size: 14px;
+  }
+
+  .acc-btn {
+    margin-top: 50px;
+    width: 350px;
+    height: 50px;
+  }
+
+  .sign-up {
+    width: 70px;
+    font-size: 13px;
+  }
+
+  .log-in {
+    width: 70px;
     font-size: 13px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 480px) {
+  header .logo {
+    width: 165px;
+  }
+
+  header .logo img {
+    width: 28px;
+    height: 28px;
+  }
+
+  header .logo h1 {
+    font-size: 17px;
+  }
+
+  section .services-btn-container a {
+    font-size: 13px;
+  }
+
   .acc-container {
     width: 400px;
-    height: 160px;
+    height: 180px;
   }
 
   .welcome-msg {
     width: 300px;
     top: 0;
     left: 50px;
-    margin: auto;
   }
 
   .welcome-msg h2 {
@@ -282,10 +413,21 @@ section .services-btn-container {
   .welcome-msg p {
     color: #413f3f;
     font-size: 13px;
-    text-align: center;
   }
 
   .acc-btn {
-    margin-top: 60px;
+    margin-top: 50px;
+    width: 320px;
+    height: 50px;
+  }
+
+  .sign-up {
+    width: 70px;
+    font-size: 12px;
+  }
+
+  .log-in {
+    width: 70px;
+    font-size: 12px;
   }
 }
