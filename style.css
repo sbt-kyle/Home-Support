@@ -53,7 +53,7 @@ nav ul {
 
 nav li {
   list-style: none;
-  margin: 0 10px;
+  margin: 0 15px;
   font-size: 15px;
   cursor: pointer;
 }
@@ -65,12 +65,14 @@ a {
 
 li a:hover {
   padding-bottom: 2px;
-  border-bottom: solid black 2px;
+  border-bottom: solid #000 2px;
 }
 
 li a:active {
   padding-bottom: 2px;
-  border-bottom: solid #6c6cf8 2px;
+  border-bottom: solid #000 2px;
+  color: #000;
+  border-radius: 10px;
 }
 
 .burger {
@@ -220,17 +222,20 @@ section .services-btn-container {
 }
 
 /* SERVICES */
+.card-container {
+  margin-top: 50px;
+}
 
-/* .services {
+.parent-card {
   display: flex;
   text-align: center;
   justify-content: center;
 }
 
-.services .box {
-  background: #f2f2f2;
+.parent-card .child-card {
+  background: #dceaff;
   margin: 0 50px;
-  width: 250px;
+  min-width: 250px;
   height: 170px;
   padding: 20px;
   border-radius: 7%;
@@ -239,21 +244,24 @@ section .services-btn-container {
   filter: drop-shadow(8px 8px 10px gray);
 }
 
-.services .box:hover {
+.parent-card .child-card:hover {
   transform: rotateZ(-7deg);
 }
 
-.services .box h3 {
+.parent-card .child-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
+  background: #dceaff;
 }
 
-.services .box img {
+.parent-card .child-card img {
   height: 100px;
   width: 100px;
   padding-bottom: 10px;
-} */
+  background-color: #dceaff;
+}
 
+/* MEDIA QUERY */
 @media (min-width: 1200px) {
   header .logo {
     width: 200px;
@@ -307,11 +315,22 @@ section .services-btn-container {
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
-  nav {
+footer .copyright {
+  margin-top: 40px;
+  text-align: center;
+}
+
+@media (min-width: 980px) {
+  .nav-signup {
     display: none;
   }
 
+  .nav-login {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
   .burger {
     display: block;
     margin-top: 10px;
@@ -322,11 +341,129 @@ section .services-btn-container {
   header .logo {
     margin: auto;
   }
+
+  .parent-card {
+    display: inline-block;
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .parent-card .child-card {
+    margin-bottom: 50px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    min-width: 190px;
+    height: 65vh;
+    top: 9.3vh;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  .nav-links li {
+    background: #f2f2f2;
+    margin: 15px 0 20px 0;
+  }
+
+  .nav-links li a {
+    background: #f2f2f2;
+    color: #000;
+  }
+
+  .nav-signup {
+    display: none;
+  }
+
+  .nav-login {
+    display: none;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
 }
 
 @media (max-width: 767px) {
-  nav {
-    display: none;
+  header .logo h1 {
+    font-size: 17px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    min-width: 190px;
+    height: 65vh;
+    top: 9.3vh;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .nav-links li {
+    background: #f2f2f2;
+    margin: 15px 0 20px 0;
+  }
+
+  .nav-links li a {
+    background: #f2f2f2;
+    color: #000;
+  }
+
+  .nav-signup {
+    width: 80px;
+    border: 1px solid #6c6cf8;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  .nav-signup:hover {
+    border: 1px #000 solid;
+    padding: 10px 15px;
+    color: #6c6cf8;
+  }
+
+  .nav-login {
+    width: 80px;
+    border: 1px solid #6c6cf8;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  .nav-login:hover {
+    border: 1px #000 solid;
+    padding: 10px 15px;
+    color: #6c6cf8;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
   }
 
   .burger {
@@ -341,39 +478,32 @@ section .services-btn-container {
   }
 
   .acc-container {
-    width: 450px;
-    height: 190px;
+    display: none;
   }
 
-  .welcome-msg {
-    width: 350px;
-    top: 0;
-    left: 50px;
+  .parent-card {
+    display: inline-block;
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
-  .welcome-msg h2 {
-    font-size: 24px;
+  .parent-card .child-card {
+    margin-bottom: 50px;
+    min-width: 220px;
   }
 
-  .welcome-msg p {
-    color: #413f3f;
-    font-size: 14px;
+  .parent-card .child-card h3 {
+    font-size: 18px;
   }
 
-  .acc-btn {
-    margin-top: 50px;
-    width: 350px;
-    height: 50px;
+  .parent-card .child-card img {
+    height: 90px;
+    width: 90px;
   }
 
-  .sign-up {
-    width: 70px;
-    font-size: 13px;
-  }
-
-  .log-in {
-    width: 70px;
-    font-size: 13px;
+  footer .copyright {
+    display: none;
   }
 }
 
@@ -388,81 +518,44 @@ section .services-btn-container {
   }
 
   header .logo h1 {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   section .services-btn-container a {
     font-size: 13px;
   }
 
-  .acc-container {
-    width: 400px;
-    height: 180px;
+  .parent-card .child-card {
+    margin-bottom: 50px;
+    min-width: 200px;
+    height: 140px;
   }
 
-  .welcome-msg {
-    width: 300px;
-    top: 0;
-    left: 50px;
+  .parent-card .child-card h3 {
+    font-size: 16px;
   }
 
-  .welcome-msg h2 {
-    font-size: 22px;
-  }
-
-  .welcome-msg p {
-    color: #413f3f;
-    font-size: 13px;
-  }
-
-  .acc-btn {
-    margin-top: 50px;
-    width: 320px;
-    height: 50px;
-  }
-
-  .sign-up {
-    width: 70px;
-    font-size: 12px;
-  }
-
-  .log-in {
-    width: 70px;
-    font-size: 12px;
+  .parent-card .child-card img {
+    height: 80px;
+    width: 80px;
   }
 }
 
 @media (max-width: 370px) {
-  .acc-container {
-    width: 330px;
-    height: 170px;
+  header .logo {
+    width: 160px;
   }
 
-  .welcome-msg {
-    width: 270px;
-    left: 30px;
+  header .logo img {
+    width: 27px;
+    height: 27px;
   }
 
-  .welcome-msg h2 {
-    font-size: 20px;
+  header .logo h1 {
+    font-size: 15px;
   }
 
-  .welcome-msg p {
+  section .services-btn-container a {
     font-size: 12px;
-  }
-
-  .acc-btn {
-    margin-top: 50px;
-    width: 300px;
-  }
-
-  .sign-up {
-    width: 60px;
-    font-size: 11px;
-  }
-
-  .log-in {
-    width: 60px;
-    font-size: 11px;
   }
 }
